@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+:root {
+  padding: 0 15px;
+  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 480px) {
+  :root {
+    padding: 0;
+  }
+
+  .header, .main, .footer {
+    padding: 0 165px;
+  }
+}
+.stepProgressContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.stepProgressContainer .step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #afb1bd;
+  border-radius: 50%;
+  color: #afb1bd;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+}
+.stepProgressContainer .stepConnecter {
+  width: 60px;
+  height: 1px;
+  border: 2px solid #f0f0f5;
+}
+
+/*# sourceMappingURL=StepProgress.module.css.map */

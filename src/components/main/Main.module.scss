@@ -1,0 +1,81 @@
+@use "../../base";
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  margin-top: 1rem;
+  font-family: base.$main-font-family;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.stepProgress {
+  order: 1;
+}
+
+.form {
+  order: 2;
+  margin-top: 1.5rem;
+}
+
+.progressControl {
+  order: 4;
+  margin-top: 2rem;
+}
+
+.cart {
+  order: 3;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .mainTitle {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+
+  .mainWrapper {
+    flex-wrap: wrap;
+    column-gap: 130px;
+    margin-top: 3rem;
+    max-height: 493px;
+  }
+  .stepProgress {
+    order: 1;
+    height: 24px;
+  }
+
+  .form {
+    order: 2;
+    margin-top: 3rem;
+    height: 288px;
+  }
+
+  .progressControl {
+    order: 3;
+    margin-top: 3rem;
+    height: 72px;
+  }
+
+  .cart {
+    order: 4;
+    margin-top: 0;
+    min-width: 440px;
+  }
+
+  .stepProgress,
+  .form,
+  .progressControl {
+    max-width: 536px;
+  }
+}

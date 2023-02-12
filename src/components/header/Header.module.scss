@@ -1,0 +1,13 @@
+@use "../../base";
+
+.header {
+  width: 100%;
+  height: 56px;
+  background-color: lightgray;
+}
+
+@media screen and (min-width: base.$media-breakpoint) {
+  .header {
+    height: 60px;
+  }
+}

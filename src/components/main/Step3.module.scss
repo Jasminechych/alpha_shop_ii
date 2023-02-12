@@ -1,0 +1,33 @@
+@use "../../base";
+
+.formTitle {
+  @extend %formTitle;
+}
+
+.formPanel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto 64px;
+  grid-gap: 24px 30px;
+  width: 100%;
+}
+
+.cardName,
+.cardNum {
+  grid-column: 1 / 7;
+}
+
+.cardValid {
+  grid-column: 1 / 4;
+}
+
+.cardCvc {
+  grid-column: 4 / 7;
+}
+
+@media screen and (min-width: base.$media-breakpoint) {
+  .cardName,
+  .cardNum {
+    grid-column: 1 / 5;
+  }
+}

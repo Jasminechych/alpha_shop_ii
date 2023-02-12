@@ -1,0 +1,56 @@
+@use "../../base";
+
+.formTitle {
+  @extend %formTitle;
+}
+
+.radioWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.radioGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 11px 20px;
+  border: 1px solid base.$undone-progress-border;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.radio {
+  appearance: none;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid base.$progress-current-color;
+  border-radius: 50%;
+  cursor: pointer;
+  &:checked {
+    background-color: base.$background-color;
+    box-shadow: inset 0 0 0 5px base.$grey-800;
+  }
+}
+
+.radioInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  font-family: base.$main-font-family;
+  font-weight: 400;
+  line-height: 1rem;
+  color: base.$product-action-text;
+}
+
+.shippingInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shippingFee, .shipmentPeriod {
+  font-size: 12px;
+}

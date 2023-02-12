@@ -1,0 +1,127 @@
+@use "../../base";
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 358px;
+  border: 1px solid base.$product-action-bg;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.cartName {
+  display: none;
+  margin-bottom: 34px;
+  font-family: base.$main-font-family;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.itemWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.itemBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  background-color: lightgray;
+}
+
+.itemInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-grow: 1;
+  height: 100px;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 24px;
+  color: base.$grey-800;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.itemQuantity {
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.itemQuantity svg {
+  cursor: pointer;
+}
+
+.itemAmount {
+  margin-top: 18px;
+  font-family: base.$main-font-number-family;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: base.$product-action-text;
+}
+
+.calculateWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculateBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 37px;
+  margin-top: 1rem;
+  border-top: 1px solid base.$product-action-bg;
+}
+
+.calculateAmount {
+  font-family: base.$main-font-number-family;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (min-width: base.$media-breakpoint) {
+  .cartContainer {
+    width: 440px;
+    height: 492px;
+  }
+
+  .cartName {
+    display: block;
+  }
+
+  .itemWrapper {
+    gap: 34px;
+  }
+
+  .itemInfoWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 21px;
+  }
+  .itemInfo {
+    align-items: flex-start;
+  }
+
+  .itemAmount {
+    margin-top: 0;
+  }
+}

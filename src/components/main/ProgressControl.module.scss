@@ -1,0 +1,44 @@
+@use "../../base";
+
+.progressControlContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-top: 24px;
+  width: 100%;
+  border-top: 1px solid #e6e6eb;
+}
+
+%button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 156px;
+  height: 46px;
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  background: initial;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.buttonPrev {
+  @extend %button;
+  justify-content: flex-start;
+  color: base.$left-arrow;
+}
+
+.buttonPrev svg {
+  fill: base.$left-arrow;
+}
+
+.buttonNext {
+  @extend %button;
+  justify-content: center;
+  color: base.$white;
+  background-color: base.$pink;
+}
+

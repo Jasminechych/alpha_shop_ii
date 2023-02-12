@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+:root {
+  padding: 0 15px;
+  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 480px) {
+  :root {
+    padding: 0;
+  }
+
+  .header, .main, .footer {
+    padding: 0 165px;
+  }
+}
+.progressControlContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-top: 24px;
+  width: 100%;
+  border-top: 1px solid #e6e6eb;
+}
+
+.buttonNext, .buttonPrev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 156px;
+  height: 46px;
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  background: initial;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.buttonPrev {
+  justify-content: flex-start;
+  color: #000000;
+}
+
+.buttonPrev svg {
+  fill: #000000;
+}
+
+.buttonNext {
+  justify-content: center;
+  color: #ffffff;
+  background-color: #f67599;
+}
+
+/*# sourceMappingURL=ProgressControl.module.css.map */

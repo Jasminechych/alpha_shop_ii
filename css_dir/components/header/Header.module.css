@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+:root {
+  padding: 0 15px;
+  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 480px) {
+  :root {
+    padding: 0;
+  }
+
+  .header, .main, .footer {
+    padding: 0 165px;
+  }
+}
+.header {
+  width: 100%;
+  height: 56px;
+  background-color: lightgray;
+}
+
+@media screen and (min-width: 480px) {
+  .header {
+    height: 60px;
+  }
+}
+
+/*# sourceMappingURL=Header.module.css.map */
