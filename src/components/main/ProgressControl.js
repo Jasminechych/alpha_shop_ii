@@ -1,7 +1,7 @@
 import { ReactComponent as RightArrow } from "../icons/right-arrow.svg";
-import { ReactComponent as LeftArrow } from '../icons/left-arrow.svg'
+import { ReactComponent as LeftArrow } from "../icons/left-arrow.svg";
 
-import style from './ProgressControl.module.scss'
+import style from "./ProgressControl.module.scss";
 
 function ProgressControl() {
   return (
