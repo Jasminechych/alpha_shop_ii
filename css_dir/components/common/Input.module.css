@@ -39,7 +39,9 @@
     padding: 0;
   }
 
-  .header, .main, .footer {
+  .header,
+.main,
+.footer {
     padding: 0 165px;
   }
 }
