@@ -54,9 +54,9 @@ function Cart() {
   );
 }
 
-function CartItem({ key, id, name, img, price, quantity }) {
+function CartItem({ id, name, img, price, quantity }) {
   return (
-    <div key={key} id={id} className={style.itemBlock}>
+    <div id={id} className={style.itemBlock}>
       <img src={img} alt="itemImage" className={style.itemImg} />
       <div className={style.itemInfoWrapper}>
         <div className={style.itemInfo}>
