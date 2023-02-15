@@ -1,22 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 :root {
-  padding: 0 15px;
   font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
   font-size: 16px;
 }
 
-@media screen and (min-width: 480px) {
-  :root {
-    padding: 0;
-  }
-
-  .header,
-.main,
-.footer {
-    padding: 0 165px;
-  }
+.headerContainer,
+.mainContainer,
+.footerContainer {
+  padding-left: clamp(15px, 10%, 165px);
+  padding-right: clamp(15px, 10%, 165px);
 }
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -31,70 +26,62 @@
 }
 
 .mainWrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 32px 448px 358px 72px;
+  grid-gap: 32px;
   margin-top: 1.5rem;
 }
 
 .stepProgress {
-  order: 1;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 .form {
-  order: 2;
-  margin-top: 1.5rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
 
 .progressControl {
-  order: 4;
-  margin-top: 2rem;
+  grid-column: 1/2;
+  grid-row: 4/5;
 }
 
 .cart {
-  order: 3;
-  margin-top: 2rem;
+  grid-column: 1/2;
+  grid-row: 3/4;
 }
 
 @media screen and (min-width: 480px) {
   .mainTitle {
     margin-top: 5rem;
-    font-size: 2rem;
+    font-size: 32px;
   }
 
   .mainWrapper {
-    flex-wrap: wrap;
-    column-gap: 130px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 24px 288px 72px;
+    grid-gap: 3rem 130px;
+    width: 100%;
     margin-top: 3rem;
-    max-height: 493px;
   }
 
   .stepProgress {
-    order: 1;
-    height: 24px;
+    grid-row: 1/2;
   }
 
   .form {
-    order: 2;
-    margin-top: 3rem;
-    height: 288px;
+    grid-row: 2/3;
   }
 
   .progressControl {
-    order: 3;
-    margin-top: 3rem;
-    height: 72px;
+    grid-row: 3/4;
   }
 
   .cart {
-    order: 4;
-    margin-top: 0;
-    min-width: 440px;
-  }
-
-  .stepProgress,
-.form,
-.progressControl {
-    max-width: 536px;
+    grid-column: 2/3;
+    grid-row: 1/4;
   }
 }
 

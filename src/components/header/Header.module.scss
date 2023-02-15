@@ -1,29 +1,59 @@
 @use "../../base";
 
 .header {
-  width: 100%;
-  height: 56px;
-  outline: 1px solid red;
+  outline: 2px solid red;
   position: fixed;
-  z-index: 999;
-  background-color: base.$white; // 背景
+  z-index: 1;
+  width: calc(100% - 30px);
+  height: 56px;
+  text-align: center;
+  background-color: base.$white;
 }
 
-.navbar {
-  
-}
 
 .navbarLogo {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: 0 auto;
-  // line-height: 56px;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.navbar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vw;
+  background-color: white;
+}
 
+.navbarList {
+  text-decoration: none;
+
+  & a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: base.$nav-icon;
+  }
+}
+
+.navbarListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+}
+
+.navbarTools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 43px;
+  margin-top: 25px;
+
+}
 
 @media screen and (min-width: base.$media-breakpoint) {
   .header {

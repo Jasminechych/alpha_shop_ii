@@ -24,30 +24,32 @@ function Cart() {
   return (
     <div className={style.cartContainer}>
       <h4 className={style.cartName}>購物籃</h4>
-      <div className={style.itemWrapper}>
-        {cartData.map((item) => {
-          const { id, name, img, price, quantity } = item;
-          return (
-            <CartItem
-              key={id}
-              id={id}
-              name={name}
-              img={img}
-              price={price}
-              quantity={quantity}
-            />
-          );
-        })}
-      </div>
-
-      <div className={style.calculateWrapper}>
-        <div className={style.calculateBlock}>
-          <p className={style.calculateName}>運費</p>
-          <p className={style.calculateAmount}>免費</p>
+      <div className={style.cartWrapper}>
+        <div className={style.itemWrapper}>
+          {cartData.map((item) => {
+            const { id, name, img, price, quantity } = item;
+            return (
+              <CartItem
+                key={id}
+                id={id}
+                name={name}
+                img={img}
+                price={price}
+                quantity={quantity}
+              />
+            );
+          })}
         </div>
-        <div className={style.calculateBlock}>
-          <p className={style.calculateName}>小記</p>
-          <p className={style.calculateAmount}>$9999</p>
+
+        <div className={style.calculateWrapper}>
+          <div className={style.calculateBlock}>
+            <p className={style.calculateName}>運費</p>
+            <p className={style.calculateAmount}>免費</p>
+          </div>
+          <div className={style.calculateBlock}>
+            <p className={style.calculateName}>小記</p>
+            <p className={style.calculateAmount}>$9999</p>
+          </div>
         </div>
       </div>
     </div>

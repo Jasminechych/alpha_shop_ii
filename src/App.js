@@ -8,7 +8,7 @@ import "./reset.scss";
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Main />
       <Footer />
     </div>

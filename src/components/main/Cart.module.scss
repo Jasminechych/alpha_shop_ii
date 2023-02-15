@@ -3,8 +3,7 @@
 .cartContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 358px;
+  height: 100%;
   border: 1px solid base.$product-action-bg;
   border-radius: 8px;
   padding: 1rem;
@@ -18,15 +17,24 @@
   font-size: 18px;
 }
 
+.cartWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .itemWrapper {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  overflow: scroll;
 }
 
 .itemBlock {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .itemImg {
@@ -99,8 +107,8 @@
 
 @media screen and (min-width: base.$media-breakpoint) {
   .cartContainer {
-    width: 440px;
-    height: 492px;
+    // width: 440px;
+    // height: 492px;
   }
 
   .cartName {

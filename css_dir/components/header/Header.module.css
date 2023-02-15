@@ -1,37 +1,67 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 :root {
-  padding: 0 15px;
   font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
   font-size: 16px;
 }
 
-@media screen and (min-width: 480px) {
-  :root {
-    padding: 0;
-  }
-
-  .header,
-.main,
-.footer {
-    padding: 0 165px;
-  }
+.headerContainer,
+.mainContainer,
+.footerContainer {
+  padding-left: clamp(15px, 10%, 165px);
+  padding-right: clamp(15px, 10%, 165px);
 }
+
 .header {
-  width: 100%;
-  height: 56px;
-  outline: 1px solid red;
+  outline: 2px solid red;
   position: fixed;
-  z-index: 999;
+  z-index: 1;
+  width: calc(100% - 30px);
+  height: 56px;
+  text-align: center;
   background-color: #ffffff;
 }
 
 .navbarLogo {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar {
+  position: absolute;
+  top: 100%;
   left: 0;
-  margin: 0 auto;
+  width: 100%;
+  height: 100vw;
+  background-color: white;
+}
+
+.navbarList {
+  text-decoration: none;
+}
+.navbarList a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #2a2a2a;
+}
+
+.navbarListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+}
+
+.navbarTools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 43px;
+  margin-top: 25px;
 }
 
 @media screen and (min-width: 480px) {
