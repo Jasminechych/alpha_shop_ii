@@ -9,12 +9,17 @@ function Header() {
   return (
     <header className={style.header}>
       <div className={style.headerContainer}>
-        <label htmlFor="toggleHamburger">
-          <input type="checkbox" className={style.toggleHamburger} />
-        </label>
         <a href="./" className={style.navbarLogo}>
           <Logo />
         </a>
+        <label htmlFor="toggleHamburger" className={style.toggleHamburgerLabel}>
+          <span className={style.hamburger}></span>
+        </label>
+        <input
+          type="checkbox"
+          id="toggleHamburger"
+          className={style.toggleHamburger}
+        />
         <nav className={style.navbar}>
           <ul className={style.navbarList}>
             <li className={style.navbarListItem}>
@@ -33,12 +38,12 @@ function Header() {
               <a href="./">商品列表</a>
             </li>
           </ul>
-          <div className={style.navbarTools}>
-            <Search />
-            <Cart />
-            <Moon />
-          </div>
         </nav>
+        <div className={style.navbarTools}>
+          <Search />
+          <Cart />
+          <Moon />
+        </div>
       </div>
     </header>
   );

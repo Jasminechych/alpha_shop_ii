@@ -41,7 +41,6 @@ $left-arrow: #000000;
 $media-breakpoint: 480px;
 
 :root {
-  // padding: 0 15px;
   font-family: $main-font-family;
   font-size: 16px;
 }
@@ -49,8 +48,9 @@ $media-breakpoint: 480px;
 .headerContainer,
 .mainContainer,
 .footerContainer {
-  padding-left: clamp(15px, 10%, 165px);
-  padding-right: clamp(15px, 10%, 165px);
+  max-width: calc(1440px - 165px * 2);
+  margin: 0 auto;
+  padding: 0 min(15px);
 }
 
 %formTitle {
