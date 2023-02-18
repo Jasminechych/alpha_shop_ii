@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.step {
+%step {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,18 +20,34 @@
   font-weight: 700;
 }
 
-.stepConnecter {
+.step {
+  @extend %step;
+}
+
+.step1 {
+  @extend %step;
+  border: none;
+  color: base.$white;
+  background-color: base.$progress-current-color
+}
+
+.activeStep {
+  @extend %step;
+  border: 1px solid base.$progress-current-color;
+  color: base.$progress-current-color;
+}
+
+%stepConnecter {
   width: 60px;
   height: 1px;
   border: 2px solid base.$undone-progress-border;
 }
 
-.activeStep {
-  border: none;
-  color: base.$white;
-  background-color: base.$progress-current-color;
+.stepConnecter {
+  @extend %stepConnecter;
 }
 
 .activeConnector {
+  @extend %stepConnecter;
   border: 2px solid base.$progress-current-color;
 }

@@ -30,7 +30,6 @@
   @extend %button;
   justify-content: flex-start;
   color: base.$left-arrow;
-  visibility: hidden;
 }
 
 .buttonPrev svg {
@@ -42,4 +41,8 @@
   justify-content: center;
   color: base.$white;
   background-color: base.$pink;
+}
+
+.none {
+  display: none;
 }

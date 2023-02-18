@@ -42,7 +42,6 @@
 .buttonPrev {
   justify-content: flex-start;
   color: #000000;
-  visibility: hidden;
 }
 
 .buttonPrev svg {
@@ -53,6 +52,10 @@
   justify-content: center;
   color: #ffffff;
   background-color: #f67599;
+}
+
+.none {
+  display: none;
 }
 
 /*# sourceMappingURL=ProgressControl.module.css.map */

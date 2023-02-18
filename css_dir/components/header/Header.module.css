@@ -58,13 +58,15 @@ a {
 
 .navbarTools {
   position: absolute;
-  top: calc(72px * 5 + calc(56px + 25px));
+  top: calc(72px * 5 + 56px);
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 43px;
   width: 100%;
+  height: 100%;
+  background-color: #ffffff;
   cursor: pointer;
   transform: scale(0, 1);
   transform-origin: left;

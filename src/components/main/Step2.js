@@ -5,28 +5,58 @@ function Step2({ title }) {
     <>
       <h3 className={style.formTitle}>{title}</h3>
       <div className={style.radioWrapper}>
-        <label htmlFor="standard" className={style.radioGroup}>
-          <input id="standard" type="radio" className={style.radio} defaultChecked/>
-          <div className={style.radioInfo}>
-            <div className={style.shippingInfo}>
-              <p className={style.standardShipping}>標準運送</p>
-              <p className={style.shippingFee}>免費</p>
-            </div>
-            <p className={style.shipmentPeriod}>約 3~7 個工作天</p>
-          </div>
-        </label>
-        <label htmlFor="DHL" className={style.radioGroup}>
-          <input id="DHL" type="radio" className={style.radio} />
-          <div className={style.radioInfo}>
-            <div className={style.shippingInfo}>
-              <p className={style.standardShipping}>DHL 貨運</p>
-              <p className={style.shippingFee}>$500</p>
-            </div>
-            <p className={style.shipmentPeriod}>48 小時內發送</p>
-          </div>
-        </label>
+        <RadioGroup
+          id="standard"
+          shippingMethod="標準運送"
+          shippingFee="0"
+          shipmentPeriod="約 3~7 個工作天"
+        >
+          <input
+            id="standard"
+            type="radio"
+            name="shipment"
+            className={style.radio}
+            defaultChecked
+          />
+        </RadioGroup>
+        <RadioGroup
+          id="DHL"
+          shippingMethod="DHL 貨運"
+          shippingFee="500"
+          shipmentPeriod="48 小時內發送"
+        >
+          <input
+            id="DHL"
+            type="radio"
+            name="shipment"
+            className={style.radio}
+          />
+        </RadioGroup>
       </div>
     </>
+  );
+}
+
+function RadioGroup({ id, shippingMethod, shippingFee, shipmentPeriod }) {
+  return (
+    <label htmlFor={id} className={style.radioGroup}>
+      <input
+        id={id}
+        type="radio"
+        name="shipment"
+        className={style.radio}
+        defaultChecked={id === "standard"}
+      />
+      <div className={style.radioInfo}>
+        <div className={style.shippingInfo}>
+          <p className={style.shippingMethod}>{shippingMethod}</p>
+          <p className={style.shippingFee}>
+            {shippingFee === "0" ? "免費" : "$" + shippingFee}
+          </p>
+        </div>
+        <p className={style.shipmentPeriod}>{shipmentPeriod}</p>
+      </div>
+    </label>
   );
 }
 

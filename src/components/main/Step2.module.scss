@@ -18,7 +18,11 @@
   padding: 11px 20px;
   border: 1px solid base.$undone-progress-border;
   border-radius: 4px;
+  background-color: base.$background-color;
   cursor: pointer;
+  &:has(.radio:checked) {
+    border: 1px solid base.$progress-current-color;
+  }
 }
 
 .radio {
@@ -26,11 +30,10 @@
   margin-right: 20px;
   width: 20px;
   height: 20px;
-  border: 1px solid base.$progress-current-color;
+  border: 1px solid base.$undone-progress-border;
   border-radius: 50%;
   cursor: pointer;
   &:checked {
-    background-color: base.$background-color;
     box-shadow: inset 0 0 0 5px base.$grey-800;
   }
 }
@@ -54,3 +57,4 @@
 .shippingFee, .shipmentPeriod {
   font-size: 12px;
 }
+
