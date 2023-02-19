@@ -34,8 +34,9 @@ function Cart() {
       <h4 className={style.cartName}>購物籃</h4>
       <div className={style.cartWrapper}>
         <div className={style.itemWrapper}>
-          {cartData.map(({ id, name, img, price, quantity }) => {
-            if (quantity < 1) return
+          {cartData
+            .filter(({ quantity }) => quantity >= 1)
+            .map(({ id, name, img, price, quantity }) => {
               return (
                 <CartItem
                   key={id}
@@ -48,7 +49,7 @@ function Cart() {
                   setCartData={setCartData}
                 />
               );
-          })}
+            })}
         </div>
         <div className={style.calculateWrapper}>
           <CalculateBlock calculateName="運費" calculateAmount="0" />
