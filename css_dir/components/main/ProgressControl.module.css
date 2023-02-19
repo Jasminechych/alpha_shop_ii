@@ -58,4 +58,14 @@
   display: none;
 }
 
+@media screen and (min-width: 480px) {
+  .progressControlContainer {
+    justify-content: flex-end;
+  }
+
+  .buttonNext {
+    max-width: 156px;
+  }
+}
+
 /*# sourceMappingURL=ProgressControl.module.css.map */

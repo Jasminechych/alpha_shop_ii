@@ -19,7 +19,7 @@ function StepProgress({ step }) {
       <span
         className={step >= 2 ? style.activeConnector : style.stepConnecter}
       ></span>
-      <div className={style.step}>3</div>
+      <div className={step === 3 ? style.activeStep : style.step}>3</div>
     </div>
   );
 }

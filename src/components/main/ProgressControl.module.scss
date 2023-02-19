@@ -46,3 +46,12 @@
 .none {
   display: none;
 }
+
+@media screen and (min-width: base.$media-breakpoint) {
+  .progressControlContainer {
+    justify-content: flex-end;
+  }
+  .buttonNext {
+    max-width: 156px;
+  }
+}

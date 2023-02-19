@@ -1,9 +1,10 @@
 import { ReactComponent as Plus } from "../icons/plus.svg";
 import { ReactComponent as Minus } from "../../components/icons/minus.svg";
+import { useState } from "react";
 
 import style from "./Cart.module.scss";
 
-const cartData = [
+const dummyData = [
   {
     id: "1",
     name: "貓咪罐罐",
@@ -21,42 +22,57 @@ const cartData = [
 ];
 
 function Cart() {
+  const [cartData, setCartData] = useState(dummyData);
+
+  const total = cartData.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.price * currentValue.quantity;
+  }, 0);
+
+
   return (
     <div className={style.cartContainer}>
       <h4 className={style.cartName}>購物籃</h4>
       <div className={style.cartWrapper}>
         <div className={style.itemWrapper}>
-          {cartData.map((item) => {
-            const { id, name, img, price, quantity } = item;
-            return (
-              <CartItem
-                key={id}
-                id={id}
-                name={name}
-                img={img}
-                price={price}
-                quantity={quantity}
-              />
-            );
+          {cartData.map(({ id, name, img, price, quantity }) => {
+            if (quantity < 1) return
+              return (
+                <CartItem
+                  key={id}
+                  id={id}
+                  name={name}
+                  img={img}
+                  price={price}
+                  quantity={quantity}
+                  cartData={cartData}
+                  setCartData={setCartData}
+                />
+              );
           })}
         </div>
-
         <div className={style.calculateWrapper}>
-          <div className={style.calculateBlock}>
-            <p className={style.calculateName}>運費</p>
-            <p className={style.calculateAmount}>免費</p>
-          </div>
-          <div className={style.calculateBlock}>
-            <p className={style.calculateName}>小記</p>
-            <p className={style.calculateAmount}>$9999</p>
-          </div>
+          <CalculateBlock calculateName="運費" calculateAmount="0" />
+          <CalculateBlock calculateName="小記" calculateAmount={total} />
         </div>
       </div>
     </div>
   );
 }
 
-function CartItem({ id, name, img, price, quantity }) {
+function CartItem({ id, name, img, price, quantity, cartData, setCartData }) {
+  function handleOnClick(id, action) {
+    setCartData(
+      cartData.map((data) => {
+        if (data.id === id && action === "minus") {
+          return { ...data, quantity: quantity - 1 };
+        } else if (data.id === id && action === "plus") {
+          return { ...data, quantity: quantity + 1 };
+        }
+        return data;
+      })
+    );
+  }
+
   return (
     <div id={id} className={style.itemBlock}>
       <img src={img} alt="itemImage" className={style.itemImg} />
@@ -64,13 +80,24 @@ function CartItem({ id, name, img, price, quantity }) {
         <div className={style.itemInfo}>
           <p className={style.itemName}>{name}</p>
           <div className={style.itemQuantity}>
-            <Plus />
+            <Minus onClick={() => handleOnClick(id, "minus")} />
             <p>{quantity}</p>
-            <Minus />
+            <Plus onClick={() => handleOnClick(id, "plus")} />
           </div>
         </div>
-        <p className={style.itemAmount}>{price}</p>
+        <p className={style.itemAmount}>{price * quantity}</p>
       </div>
+    </div>
+  );
+}
+
+function CalculateBlock({ calculateName, calculateAmount }) {
+  return (
+    <div className={style.calculateBlock}>
+      <p className={style.calculateName}>{calculateName}</p>
+      <p className={style.calculateAmount}>
+        {calculateAmount === "0" ? "免費" : "$" + calculateAmount}
+      </p>
     </div>
   );
 }
