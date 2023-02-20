@@ -28,6 +28,9 @@ function Cart() {
     return accumulator + currentValue.price * currentValue.quantity;
   }, 0);
 
+  function addCommas(num) {
+    return num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+  }
 
   return (
     <div className={style.cartContainer}>
@@ -47,20 +50,38 @@ function Cart() {
                   quantity={quantity}
                   cartData={cartData}
                   setCartData={setCartData}
+                  addCommas={addCommas}
                 />
               );
             })}
         </div>
         <div className={style.calculateWrapper}>
-          <CalculateBlock calculateName="運費" calculateAmount="0" />
-          <CalculateBlock calculateName="小記" calculateAmount={total} />
+          <CalculateBlock
+            calculateName="運費"
+            calculateAmount="0"
+            addCommas={addCommas}
+          />
+          <CalculateBlock
+            calculateName="小記"
+            calculateAmount={total}
+            addCommas={addCommas}
+          />
         </div>
       </div>
     </div>
   );
 }
 
-function CartItem({ id, name, img, price, quantity, cartData, setCartData }) {
+function CartItem({
+  id,
+  name,
+  img,
+  price,
+  quantity,
+  cartData,
+  setCartData,
+  addCommas,
+}) {
   function handleOnClick(id, action) {
     setCartData(
       cartData.map((data) => {
@@ -86,18 +107,18 @@ function CartItem({ id, name, img, price, quantity, cartData, setCartData }) {
             <Plus onClick={() => handleOnClick(id, "plus")} />
           </div>
         </div>
-        <p className={style.itemAmount}>{price * quantity}</p>
+        <p className={style.itemAmount}>{"$" + addCommas(price * quantity)}</p>
       </div>
     </div>
   );
 }
 
-function CalculateBlock({ calculateName, calculateAmount }) {
+function CalculateBlock({ calculateName, calculateAmount, addCommas }) {
   return (
     <div className={style.calculateBlock}>
       <p className={style.calculateName}>{calculateName}</p>
       <p className={style.calculateAmount}>
-        {calculateAmount === "0" ? "免費" : "$" + calculateAmount}
+        {calculateAmount === "0" ? "免費" : "$" + addCommas(calculateAmount)}
       </p>
     </div>
   );
