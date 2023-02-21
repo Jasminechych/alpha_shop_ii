@@ -1,9 +1,9 @@
-import { ReactComponent as Logo } from "../icons/logo.svg";
-import { ReactComponent as Search } from "../icons/search.svg";
-import { ReactComponent as Cart } from "../icons/cart.svg";
-import { ReactComponent as Moon } from "../icons/moon.svg";
+import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
+import { ReactComponent as Search } from "src/assets/icons/search.svg";
+import { ReactComponent as Cart } from "src/assets/icons/cart.svg";
+import { ReactComponent as Moon } from "src/assets/icons/moon.svg";
 
-import style from "./Header.module.scss";
+import style from "src/components/header/Header.module.scss";
 
 function Header() {
   return (

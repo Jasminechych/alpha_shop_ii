@@ -1,6 +1,6 @@
-import { ReactComponent as PgComplete } from "../icons/pg-complete.svg";
+import { ReactComponent as PgComplete } from "src/assets/icons/pg-complete.svg";
 
-import style from "./StepProgress.module.scss";
+import style from "src/components/main/StepProgress.module.scss";
 
 function StepProgress({ step }) {
   return (

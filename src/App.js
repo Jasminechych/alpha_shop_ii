@@ -1,8 +1,8 @@
-import Header from "./components/header/Header";
-import Main from "./components/main/Main";
-import Footer from "./components/footer/Footer";
+import Header from "src/components/header/Header";
+import Main from "src/components/main/Main";
+import Footer from "src/components/footer/Footer";
 
-import "./reset.scss";
+import "src/reset.scss";
 
 
 function App() {

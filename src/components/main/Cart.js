@@ -1,8 +1,8 @@
-import { ReactComponent as Plus } from "../icons/plus.svg";
-import { ReactComponent as Minus } from "../../components/icons/minus.svg";
+import { ReactComponent as Plus } from "src/assets/icons/plus.svg";
+import { ReactComponent as Minus } from "src/assets/icons/minus.svg";
 import { useState } from "react";
 
-import style from "./Cart.module.scss";
+import style from "src/components/main/Cart.module.scss";
 
 const dummyData = [
   {

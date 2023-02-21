@@ -1,5 +1,4 @@
-// import css
-import style from'./Input.module.scss'
+import style from'src/components/common/Input.module.scss'
 
 function Input ({ name, type, placeholder, className }) {
   return (

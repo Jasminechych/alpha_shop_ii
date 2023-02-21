@@ -1,5 +1,4 @@
-// import css
-import style from "./Select.module.scss";
+import style from "src/components/common/Select.module.scss";
 
 function Select({ name, data, className }) {
   return (

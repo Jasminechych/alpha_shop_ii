@@ -1,88 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
-:root {
-  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
-  font-size: 16px;
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use "src/base.scss";
+ *   | ^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src/components/main/Main.module.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"src/base.scss\";\a   \2502  ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/components/main/Main.module.scss 1:1  root stylesheet";
 }
-
-.headerContainer,
-.mainContainer,
-.footerContainer {
-  max-width: calc(1440px - 165px * 2);
-  margin: 0 auto;
-  padding: 0 min(15px);
-}
-
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.mainTitle {
-  margin-top: 1rem;
-  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 38px;
-}
-
-.mainWrapper {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-gap: 32px;
-  margin-top: 1.5rem;
-}
-
-.stepProgress {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-
-.form {
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
-
-.progressControl {
-  grid-column: 1/2;
-  grid-row: 4/5;
-}
-
-.cart {
-  grid-column: 1/2;
-  grid-row: 3/4;
-}
-
-@media screen and (min-width: 480px) {
-  .mainTitle {
-    margin-top: calc(5rem + 60px);
-    font-size: 32px;
-  }
-
-  .mainWrapper {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 24px 288px 72px;
-    grid-gap: 3rem clamp(0px, 10%, 130px);
-    width: 100%;
-    margin-top: 3rem;
-  }
-
-  .stepProgress {
-    grid-row: 1/2;
-  }
-
-  .form {
-    grid-row: 2/3;
-  }
-
-  .progressControl {
-    grid-row: 3/4;
-  }
-
-  .cart {
-    grid-column: 2/3;
-    grid-row: 1/4;
-  }
-}
-
-/*# sourceMappingURL=Main.module.css.map */

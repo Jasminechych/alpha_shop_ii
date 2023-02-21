@@ -1,4 +1,4 @@
-import style from "./Step2.module.scss";
+import style from "src/components/main/Step2.module.scss";
 
 function Step2({ title }) {
   return (

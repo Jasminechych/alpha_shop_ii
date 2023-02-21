@@ -1,12 +1,12 @@
-import StepProgress from "./StepProgress";
-import Step1 from "./Step1";
-import Step2 from "./Step2";
-import Step3 from "./Step3";
-import ProgressControl from "./ProgressControl";
-import Cart from "./Cart";
+import StepProgress from "src/components/main/StepProgress";
+import Step1 from "src/components/main/Step1";
+import Step2 from "src/components/main/Step2";
+import Step3 from "src/components/main/Step3";
+import ProgressControl from "src/components/main/ProgressControl";
+import Cart from "src/components/main/Cart";
 import { useState } from "react";
 
-import style from "./Main.module.scss";
+import style from "src/components/main/Main.module.scss";
 
 function Main() {
   const [step, setStep] = useState(1)

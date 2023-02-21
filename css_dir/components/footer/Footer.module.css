@@ -1,31 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
-:root {
-  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
-  font-size: 16px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/base.scss';
+ *   | ^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src/components/footer/Footer.module.scss 1:1  root stylesheet */
 
-.headerContainer,
-.mainContainer,
-.footerContainer {
-  max-width: calc(1440px - 165px * 2);
-  margin: 0 auto;
-  padding: 0 min(15px);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/base.scss';\a   \2502  ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/components/footer/Footer.module.scss 1:1  root stylesheet";
 }
-
-.footer {
-  display: none;
-  width: 100%;
-  height: 284px;
-  background-color: #f6f7f8;
-  margin-top: 120px;
-}
-
-@media screen and (min-width: 480px) {
-  .footer {
-    display: block;
-    padding: 0;
-  }
-}
-
-/*# sourceMappingURL=Footer.module.css.map */

@@ -1,145 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
-:root {
-  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
-  font-size: 16px;
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use "src/base.scss";
+ *   | ^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src/components/main/Cart.module.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"src/base.scss\";\a   \2502  ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/components/main/Cart.module.scss 1:1  root stylesheet";
 }
-
-.headerContainer,
-.mainContainer,
-.footerContainer {
-  max-width: calc(1440px - 165px * 2);
-  margin: 0 auto;
-  padding: 0 min(15px);
-}
-
-.cartContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  border: 1px solid #f0f0f5;
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-.cartName {
-  display: none;
-  margin-bottom: 34px;
-  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.cartWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.itemWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  overflow: scroll;
-}
-
-.itemBlock {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.itemImg {
-  width: 100px;
-  height: 100px;
-  border-radius: 4px;
-}
-
-.itemInfoWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-grow: 1;
-  height: 100px;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 24px;
-  color: #2a2a2a;
-}
-
-.itemInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 18px;
-}
-
-.itemQuantity {
-  display: flex;
-  gap: 20px;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.itemQuantity svg {
-  cursor: pointer;
-}
-
-.itemAmount {
-  margin-top: 18px;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  color: #000000;
-}
-
-.calculateWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.calculateBlock {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 37px;
-  margin-top: 1rem;
-  border-top: 1px solid #f0f0f5;
-}
-
-.calculateAmount {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-@media screen and (min-width: 480px) {
-  .cartName {
-    display: block;
-  }
-
-  .itemWrapper {
-    gap: 34px;
-  }
-
-  .itemInfoWrapper {
-    flex-direction: row;
-    align-items: flex-start;
-    margin-left: 21px;
-  }
-
-  .itemInfo {
-    align-items: flex-start;
-  }
-
-  .itemAmount {
-    margin-top: 0;
-  }
-}
-
-/*# sourceMappingURL=Cart.module.css.map */
