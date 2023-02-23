@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ReactComponent as PgComplete } from "src/assets/icons/pg-complete.svg";
 
-import style from "src/components/main/StepProgress.module.scss";
+import style from "src/components/Main/StepProgress/StepProgress.module.scss";
 
 // 第一種
 function StepProgress({ step }) {

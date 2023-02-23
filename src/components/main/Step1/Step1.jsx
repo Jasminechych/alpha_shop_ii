@@ -1,7 +1,7 @@
-import Input from "src/components/common/Input.js";
-import Select from "src/components/common/Select.js";
+import Input from "src/components/common/Input/Input.jsx";
+import Select from "src/components/common/Select/Select.jsx";
 
-import style from "src/components/main/Step1.module.scss";
+import style from "src/components/Main/Step1/Step1.module.scss";
 
 const titleData = [
   { value: "mr", title: "先生" },

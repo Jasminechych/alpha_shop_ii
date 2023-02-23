@@ -1,6 +1,6 @@
-import Input from "src/components/common/Input";
+import Input from "src/components/common/Input/Input";
 
-import style from "src/components/main/Step3.module.scss";
+import style from "src/components/Main/Step3/Step3.module.scss";
 
 function Step3 ({ title }) {
   return (

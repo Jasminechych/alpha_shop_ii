@@ -3,7 +3,7 @@ import { ReactComponent as Search } from "src/assets/icons/search.svg";
 import { ReactComponent as Cart } from "src/assets/icons/cart.svg";
 import { ReactComponent as Moon } from "src/assets/icons/moon.svg";
 
-import style from "src/components/header/Header.module.scss";
+import style from "src/components/Header/Header.module.scss";
 
 function Header() {
   return (

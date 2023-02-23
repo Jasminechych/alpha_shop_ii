@@ -1,15 +1,15 @@
-import StepProgress from "src/components/main/StepProgress";
-import Step1 from "src/components/main/Step1";
-import Step2 from "src/components/main/Step2";
-import Step3 from "src/components/main/Step3";
-import ProgressControl from "src/components/main/ProgressControl";
-import Cart from "src/components/main/Cart";
+import StepProgress from "src/components/Main/StepProgress/StepProgress";
+import Step1 from "src/components/Main/Step1/Step1";
+import Step2 from "src/components/Main/Step2/Step2";
+import Step3 from "src/components/Main/Step3/Step3";
+import ProgressControl from "src/components/Main/ProgressControl/ProgressControl";
+import Cart from "src/components/Main/Cart/Cart";
 import { useState } from "react";
 
-import style from "src/components/main/Main.module.scss";
+import style from "src/components/Main/Main.module.scss";
 
 function Main() {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(1);
 
   return (
     <main className={style.main}>
@@ -17,7 +17,7 @@ function Main() {
         <h2 className={style.mainTitle}>結帳</h2>
         <div className={style.mainWrapper}>
           <div className={style.stepProgress}>
-            <StepProgress step={step}/>
+            <StepProgress step={step} />
           </div>
           <form className={style.form}>
             {step === 1 && <Step1 title="寄送地址" />}

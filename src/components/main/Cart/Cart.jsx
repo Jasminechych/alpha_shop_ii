@@ -2,7 +2,7 @@ import { ReactComponent as Plus } from "src/assets/icons/plus.svg";
 import { ReactComponent as Minus } from "src/assets/icons/minus.svg";
 import { useState } from "react";
 
-import style from "src/components/main/Cart.module.scss";
+import style from "src/components/Main/Cart/Cart.module.scss";
 
 const dummyData = [
   {
@@ -21,16 +21,16 @@ const dummyData = [
   },
 ];
 
+function addCommas(num) {
+    return num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+  }
+
 function Cart() {
   const [cartData, setCartData] = useState(dummyData);
 
   const total = cartData.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.price * currentValue.quantity;
   }, 0);
-
-  function addCommas(num) {
-    return num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-  }
 
   return (
     <div className={style.cartContainer}>
