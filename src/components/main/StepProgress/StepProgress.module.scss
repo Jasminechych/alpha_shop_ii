@@ -22,32 +22,38 @@
 
 .step {
   @extend %step;
+
+  &[data-oneactive="true"] {
+    border: none;
+    color: base.$white;
+    background-color: base.$progress-current-color;
+  }
+
+  &[data-active="true"] {
+    border: 1px solid base.$progress-current-color;
+    color: base.$progress-current-color;
+  }
 }
 
 .step1 {
   @extend %step;
   border: none;
   color: base.$white;
-  background-color: base.$progress-current-color
+  background-color: base.$progress-current-color;
 }
 
-.activeStep {
-  @extend %step;
-  border: 1px solid base.$progress-current-color;
-  color: base.$progress-current-color;
-}
+// .activeStep {
+//   @extend %step;
+//   border: 1px solid base.$progress-current-color;
+//   color: base.$progress-current-color;
+// }
 
-%stepConnecter {
+.stepConnecter {
   width: 60px;
   height: 1px;
   border: 2px solid base.$undone-progress-border;
-}
 
-.stepConnecter {
-  @extend %stepConnecter;
-}
-
-.activeConnector {
-  @extend %stepConnecter;
-  border: 2px solid base.$progress-current-color;
+  &[data-active="true"] {
+    border: 2px solid base.$progress-current-color;
+  }
 }
