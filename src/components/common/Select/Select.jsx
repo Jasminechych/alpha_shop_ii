@@ -1,14 +1,21 @@
 import style from "src/components/common/Select/Select.module.scss";
+import { useFormData } from "src/components/Main/FormContext";
 
-function Select({ name, data, className }) {
+function Select({ title, data, className }) {
+  const { customerInfo, handleFormChange } = useFormData();
+
   return (
     <div className={className}>
       <div className={style.selectGroup}>
-        <div className={style.selectLabel}>{name}</div>
+        <div className={style.selectLabel}>{title}</div>
         <div className={style.selectWrapper}>
-          <select name={name} className={style.select}>
-            {data.map((item, index) => {
-              const { value, title } = item;
+          <select
+            name={title}
+            className={style.select}
+            value={customerInfo[title]}
+            onChange={handleFormChange}
+          >
+            {data.map(({ value, title }, index) => {
               if (index === 0) {
                 return (
                   <option key={value} value={value} defaultValue>

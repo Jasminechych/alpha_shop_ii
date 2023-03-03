@@ -1,3 +1,4 @@
+import { useFormData } from "src/components/Main/FormContext";
 import style from "src/components/Main/Step2/Step2.module.scss";
 
 function Step2({ title }) {
@@ -10,42 +11,33 @@ function Step2({ title }) {
           shippingMethod="標準運送"
           shippingFee="0"
           shipmentPeriod="約 3~7 個工作天"
-        >
-          <input
-            id="standard"
-            type="radio"
-            name="shipment"
-            className={style.radio}
-            defaultChecked
-          />
-        </RadioGroup>
+        />
         <RadioGroup
           id="DHL"
           shippingMethod="DHL 貨運"
           shippingFee="500"
           shipmentPeriod="48 小時內發送"
-        >
-          <input
-            id="DHL"
-            type="radio"
-            name="shipment"
-            className={style.radio}
-          />
-        </RadioGroup>
+        />
       </div>
     </>
   );
 }
 
 function RadioGroup({ id, shippingMethod, shippingFee, shipmentPeriod }) {
+  const { isChecked, handleChange } = useFormData();
+
   return (
-    <label htmlFor={id} className={style.radioGroup}>
+    <label
+      htmlFor={id}
+      className={id === isChecked.id ? isChecked.style : style.radioGroup}
+    >
       <input
         id={id}
         type="radio"
-        name="shipment"
+        name="運送方式"
         className={style.radio}
-        defaultChecked={id === "standard"}
+        checked={id === isChecked.id}
+        onChange={() => handleChange(id, shippingFee)}
       />
       <div className={style.radioInfo}>
         <div className={style.shippingInfo}>

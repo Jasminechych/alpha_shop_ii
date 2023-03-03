@@ -13,7 +13,7 @@
 }
 
 .cardName,
-.cardNum {
+.cardNumber {
   grid-column: 1 / 7;
 }
 
@@ -27,7 +27,7 @@
 
 @media screen and (min-width: base.$media-breakpoint) {
   .cardName,
-  .cardNum {
+  .cardNumber {
     grid-column: 1 / 5;
   }
 }

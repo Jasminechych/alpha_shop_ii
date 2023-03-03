@@ -42,32 +42,33 @@ const locationData = [
 ];
 
 function Step1({ title }) {
+
   return (
     <>
       <h3 className={style.formTitle}>{title}</h3>
       <div className={style.formPanel}>
-        <Select name="稱謂" data={titleData} className={style.title} />
+        <Select title="稱謂" data={titleData} className={style.title} />
         <Input
-          name="姓名"
+          title="姓名"
           type="text"
           placeholder="請輸入姓名"
           className={style.name}
         />
         <Input
-          name="電話"
+          title="電話"
           type="text"
           placeholder="請輸入行動電話"
           className={style.tel}
         />
         <Input
-          name="email"
+          title="Email"
           type="email"
           placeholder="請輸入電子郵件"
           className={style.email}
         />
-        <Select name="縣市" data={locationData} className={style.location} />
+        <Select title="縣市" data={locationData} className={style.location} />
         <Input
-          name="地址"
+          title="地址"
           type="text"
           placeholder="請輸入地址"
           className={style.address}

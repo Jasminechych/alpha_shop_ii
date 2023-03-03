@@ -1,36 +1,16 @@
 import { ReactComponent as Plus } from "src/assets/icons/plus.svg";
 import { ReactComponent as Minus } from "src/assets/icons/minus.svg";
-import { useState } from "react";
-
+import { useCartData } from "src/components/Main/Cart/CartContext";
+import { useFormData } from "src/components/Main/FormContext";
 import style from "src/components/Main/Cart/Cart.module.scss";
 
-const dummyData = [
-  {
-    id: "1",
-    name: "貓咪罐罐",
-    img: "https://picsum.photos/300/300?text=1",
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: "2",
-    name: "貓咪干干",
-    img: "https://picsum.photos/300/300?text=2",
-    price: 200,
-    quantity: 1,
-  },
-];
-
 function addCommas(num) {
-    return num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-  }
+  return num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+}
 
 function Cart() {
-  const [cartData, setCartData] = useState(dummyData);
-
-  const total = cartData.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.price * currentValue.quantity;
-  }, 0);
+  const { cartData, total } = useCartData();
+  const { isChecked } = useFormData()
 
   return (
     <div className={style.cartContainer}>
@@ -48,8 +28,6 @@ function Cart() {
                   img={img}
                   price={price}
                   quantity={quantity}
-                  cartData={cartData}
-                  setCartData={setCartData}
                   addCommas={addCommas}
                 />
               );
@@ -58,13 +36,11 @@ function Cart() {
         <div className={style.calculateWrapper}>
           <CalculateBlock
             calculateName="運費"
-            calculateAmount="0"
-            addCommas={addCommas}
+            calculateAmount={String(isChecked.shippingFee)}
           />
           <CalculateBlock
             calculateName="小記"
-            calculateAmount={total}
-            addCommas={addCommas}
+            calculateAmount={total + isChecked.shippingFee}
           />
         </div>
       </div>
@@ -72,16 +48,9 @@ function Cart() {
   );
 }
 
-function CartItem({
-  id,
-  name,
-  img,
-  price,
-  quantity,
-  cartData,
-  setCartData,
-  addCommas,
-}) {
+function CartItem({ id, name, img, price, quantity }) {
+  const { cartData, setCartData } = useCartData();
+
   function handleOnClick(id, action) {
     setCartData(
       cartData.map((data) => {
@@ -113,7 +82,7 @@ function CartItem({
   );
 }
 
-function CalculateBlock({ calculateName, calculateAmount, addCommas }) {
+function CalculateBlock({ calculateName, calculateAmount }) {
   return (
     <div className={style.calculateBlock}>
       <p className={style.calculateName}>{calculateName}</p>
