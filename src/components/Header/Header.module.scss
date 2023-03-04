@@ -1,0 +1,160 @@
+@use "src/base.scss";
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  background-color: base.$white;
+}
+
+.navbarLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.navbar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vw;
+  background-color: base.$white;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+a {
+  text-decoration: none;
+  color: base.$nav-icon;
+}
+
+.navbarListItem {
+  height: 72px;
+  line-height: 72px;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+  font-weight: 500;
+  font-size: 1rem;
+  opacity: 0;
+}
+
+.navbarTools {
+  position: absolute;
+  top: calc(72px * 5 + 56px);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 43px;
+  width: 100%;
+  height: 100%;
+  background-color: base.$white;
+  cursor: pointer;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.toggleHamburger {
+  display: none;
+}
+
+.toggleHamburgerLabel {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .hamburger {
+    position: relative;
+    width: calc(20px / 4 * 3);
+    height: 3px;
+    background-color: base.$nav-icon;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: base.$nav-icon;
+      height: 3px;
+    }
+
+    &::before {
+      top: 8px;
+      width: calc(20px / 2);
+    }
+
+    &::after {
+      bottom: 8px;
+      width: 20px;
+    }
+  }
+}
+
+.toggleHamburger:checked ~ .navbar, .toggleHamburger:checked ~ .navbarTools {
+  transform: scale(1, 1);
+
+  .navbarListItem {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+  }
+}
+
+@media screen and (min-width: base.$media-breakpoint) {
+  .header {
+    height: 60px;
+  }
+  .headerContainer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 60px;
+    column-gap: min(2rem, 86px);
+    align-items: center;
+  }
+
+  .navbarLogo {
+    all: unset;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .toggleHamburgerLabel {
+    display: none;
+  }
+
+  .navbar {
+    all: unset;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-self: start;
+  }
+
+  .navbarList {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbarListItem {
+    all: unset;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .navbarTools {
+    all: unset;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    justify-self: end;
+    display: flex;
+    gap: 2rem;
+  }
+}

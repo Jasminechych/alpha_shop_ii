@@ -1,0 +1,57 @@
+@use "src/base";
+
+.progressControlContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(100% - 156px * 2);
+  margin-bottom: 40px;
+  padding-top: 24px;
+  width: 100%;
+  border-top: 1px solid #e6e6eb;
+}
+
+%button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 46px;
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  background: initial;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.buttonPrev {
+  @extend %button;
+  justify-content: flex-start;
+  color: base.$left-arrow;
+}
+
+.buttonPrev svg {
+  fill: base.$left-arrow;
+}
+
+.buttonNext {
+  @extend %button;
+  justify-content: center;
+  color: base.$white;
+  background-color: base.$pink;
+}
+
+.none {
+  display: none;
+}
+
+@media screen and (min-width: base.$media-breakpoint) {
+  .progressControlContainer {
+    justify-content: flex-end;
+  }
+  .buttonNext {
+    max-width: 156px;
+  }
+}

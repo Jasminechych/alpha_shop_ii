@@ -1,0 +1,13 @@
+@use "src/base.scss";
+
+.inputGroup {
+  @extend %inputGroup_share;
+}
+
+.inputLabel {
+  @extend %inputLabel_share;
+}
+
+.input {
+  @extend %input_share;
+}
