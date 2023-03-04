@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 import { useCartData } from "src/components/Main/Cart/CartContext";
-import style from "src/components/Main/Step2/Step2.module.scss";
 
 // 創建 Context
 const FormContext = createContext();
@@ -33,7 +32,6 @@ function FormProvider({ children }) {
   const [isChecked, setIsChecked] = useState({
     id: "standard",
     shippingFee: 0,
-    style: `${style.isCheckedRadioGroup}`,
   });
 
   function handleChange(id, shippingFee) {
@@ -44,6 +42,7 @@ function FormProvider({ children }) {
     });
   }
 
+  // 提交表單的功能
   function handleFormSubmit(e) {
     e.preventDefault();
     console.log(

@@ -10,29 +10,26 @@
   gap: 1.5rem;
 }
 
-.radioGroup {
+%radioStyle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   padding: 11px 20px;
-  border: 1px solid base.$undone-progress-border;
   border-radius: 4px;
   background-color: base.$background-color;
   cursor: pointer;
 }
 
-.isCheckedRadioGroup {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  padding: 11px 20px;
-  border-radius: 4px;
-  background-color: base.$background-color;
-  cursor: pointer;
-    border: 1px solid base.$progress-current-color;
-  }
+.radioGroup {
+  @extend %radioStyle;
+  border: 1px solid base.$undone-progress-border;
+}
+
+.radioGroupChecked {
+  @extend %radioStyle;
+  border: 1px solid base.$progress-current-color;
+}
 
 .radio {
   appearance: none;
@@ -63,7 +60,7 @@
   justify-content: space-between;
 }
 
-.shippingFee, .shipmentPeriod {
+.shippingFee,
+.shipmentPeriod {
   font-size: 12px;
 }
-

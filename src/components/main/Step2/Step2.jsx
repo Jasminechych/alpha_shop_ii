@@ -26,30 +26,35 @@ function Step2({ title }) {
 function RadioGroup({ id, shippingMethod, shippingFee, shipmentPeriod }) {
   const { isChecked, handleChange } = useFormData();
 
-  return (
-    <label
-      htmlFor={id}
-      className={id === isChecked.id ? isChecked.style : style.radioGroup}
-    >
-      <input
-        id={id}
-        type="radio"
-        name="運送方式"
-        className={style.radio}
-        checked={id === isChecked.id}
-        onChange={() => handleChange(id, shippingFee)}
-      />
-      <div className={style.radioInfo}>
-        <div className={style.shippingInfo}>
-          <p className={style.shippingMethod}>{shippingMethod}</p>
-          <p className={style.shippingFee}>
-            {shippingFee === "0" ? "免費" : "$" + shippingFee}
-          </p>
+  let radioStyle = style.radioGroup;
+  if (id === isChecked.id) {
+    radioStyle = style.radioGroupChecked;
+  }
+
+    return (
+      <label
+        htmlFor={id}
+        className={radioStyle}
+      >
+        <input
+          id={id}
+          type="radio"
+          name="運送方式"
+          className={style.radio}
+          checked={id === isChecked.id}
+          onChange={() => handleChange(id, shippingFee)}
+        />
+        <div className={style.radioInfo}>
+          <div className={style.shippingInfo}>
+            <p className={style.shippingMethod}>{shippingMethod}</p>
+            <p className={style.shippingFee}>
+              {shippingFee === "0" ? "免費" : "$" + shippingFee}
+            </p>
+          </div>
+          <p className={style.shipmentPeriod}>{shipmentPeriod}</p>
         </div>
-        <p className={style.shipmentPeriod}>{shipmentPeriod}</p>
-      </div>
-    </label>
-  );
+      </label>
+    );
 }
 
 export default Step2;
