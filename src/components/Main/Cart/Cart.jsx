@@ -10,7 +10,7 @@ function addCommas(num) {
 
 function Cart() {
   const { cartData, total } = useCartData();
-  const { isChecked } = useFormData()
+  const { deliveryType } = useFormData();
 
   return (
     <div className={style.cartContainer}>
@@ -36,11 +36,11 @@ function Cart() {
         <div className={style.calculateWrapper}>
           <CalculateBlock
             calculateName="運費"
-            calculateAmount={String(isChecked.shippingFee)}
+            calculateAmount={String(deliveryType.shippingFee)}
           />
           <CalculateBlock
             calculateName="小記"
-            calculateAmount={total + isChecked.shippingFee}
+            calculateAmount={total + deliveryType.shippingFee}
           />
         </div>
       </div>

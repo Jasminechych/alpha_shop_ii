@@ -21,6 +21,7 @@ function FormProvider({ children }) {
     "CVC / CCV": "",
   });
 
+  // 設定表單更動的功能
   function handleFormChange(e) {
     setCustomerInfo({
       ...customerInfo,
@@ -28,15 +29,15 @@ function FormProvider({ children }) {
     });
   }
 
-  // step2 的功能
-  const [isChecked, setIsChecked] = useState({
+  // step2 確認選定運費狀態的功能
+  const [deliveryType, setDeliveryType] = useState({
     id: "standard",
     shippingFee: 0,
   });
 
-  function handleChange(id, shippingFee) {
-    setIsChecked({
-      ...isChecked,
+  function handleDeliveryTypeChange(id, shippingFee) {
+    setDeliveryType({
+      ...deliveryType,
       id: id,
       shippingFee: Number(shippingFee),
     });
@@ -49,9 +50,9 @@ function FormProvider({ children }) {
       "Customer Info: ",
       customerInfo,
       "Shipping Method: ",
-      isChecked.id,
+      deliveryType.id,
       "Order Price: ",
-      isChecked.shippingFee + total
+      deliveryType.shippingFee + total
     );
   }
 
@@ -60,8 +61,8 @@ function FormProvider({ children }) {
     customerInfo,
     handleFormChange,
     handleFormSubmit,
-    isChecked,
-    handleChange,
+    deliveryType,
+    handleDeliveryTypeChange,
   };
 
   return (
