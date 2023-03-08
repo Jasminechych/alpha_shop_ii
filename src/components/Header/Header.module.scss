@@ -125,6 +125,7 @@ a {
     all: unset;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    cursor: pointer;
   }
 
   .toggleHamburgerLabel {
@@ -156,5 +157,6 @@ a {
     justify-self: end;
     display: flex;
     gap: 2rem;
+    cursor: pointer;
   }
 }
