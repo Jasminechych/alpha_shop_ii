@@ -2,6 +2,7 @@ import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import { ReactComponent as Facebook } from "src/assets/icons/facebook.svg";
 import { ReactComponent as Instagram } from "src/assets/icons/instagram.svg";
 import { ReactComponent as Whatsapp } from "src/assets/icons/whatsapp.svg";
+import { useThemeData } from "src/ThemeContext.jsx";
 
 import style from "src/components/Footer/Footer.module.scss";
 
@@ -23,8 +24,10 @@ const info = [
 ];
 
 function Footer() {
+  const { isDark } = useThemeData();
+
   return (
-    <footer className={style.footer}>
+    <footer className={style.footer} data-theme={isDark ? "dark" : ""}>
       <div className={style.footerContainer}>
         <Logo />
         <section className={style.infoSection}>

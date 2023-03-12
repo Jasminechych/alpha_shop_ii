@@ -1,71 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
-:root {
-  font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
-  font-size: 16px;
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "src/theme-light.scss";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src/_base.scss 1:9                                   @use
+ *   src/components/main/ProgressControl.module.scss 1:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"src/theme-light.scss\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/_base.scss 1:9                                   @use\a   src/components/main/ProgressControl.module.scss 1:1  root stylesheet";
 }
-
-.headerContainer,
-.mainContainer,
-.footerContainer {
-  max-width: calc(1440px - 165px * 2);
-  margin: 0 auto;
-  padding: 0 min(15px);
-}
-
-.progressControlContainer {
-  display: flex;
-  justify-content: space-between;
-  gap: calc(100% - 156px * 2);
-  margin-bottom: 40px;
-  padding-top: 24px;
-  width: 100%;
-  border-top: 1px solid #e6e6eb;
-}
-
-.buttonNext, .buttonPrev {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  height: 46px;
-  appearance: none;
-  border: none;
-  border-radius: 8px;
-  background: initial;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.buttonPrev {
-  justify-content: flex-start;
-  color: #000000;
-}
-
-.buttonPrev svg {
-  fill: #000000;
-}
-
-.buttonNext {
-  justify-content: center;
-  color: #ffffff;
-  background-color: #f67599;
-}
-
-.none {
-  display: none;
-}
-
-@media screen and (min-width: 480px) {
-  .progressControlContainer {
-    justify-content: flex-end;
-  }
-
-  .buttonNext {
-    max-width: 156px;
-  }
-}
-
-/*# sourceMappingURL=ProgressControl.module.css.map */

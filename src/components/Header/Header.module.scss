@@ -1,4 +1,5 @@
-@use "src/base.scss";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .header {
   position: fixed;
@@ -6,7 +7,8 @@
   width: 100%;
   height: 56px;
   text-align: center;
-  background-color: base.$white;
+  background-color: var(--background-color);
+  color: var(---main-text);
 }
 
 .navbarLogo {
@@ -23,7 +25,7 @@
   left: 0;
   width: 100%;
   height: 100vw;
-  background-color: base.$white;
+  background-color: var(--background-color);
   transform: scale(0, 1);
   transform-origin: left;
   transition: transform 0.3s ease-out;
@@ -31,7 +33,7 @@
 
 a {
   text-decoration: none;
-  color: base.$nav-icon;
+  color: var(--nav-icon);
 }
 
 .navbarListItem {
@@ -53,7 +55,7 @@ a {
   gap: 43px;
   width: 100%;
   height: 100%;
-  background-color: base.$white;
+  background-color: var(--background-color);
   cursor: pointer;
   transform: scale(0, 1);
   transform-origin: left;
@@ -77,14 +79,14 @@ a {
     position: relative;
     width: calc(20px / 4 * 3);
     height: 3px;
-    background-color: base.$nav-icon;
+    background-color: var(--nav-icon);
 
     &::before,
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      background-color: base.$nav-icon;
+      background-color: var(--nav-icon);
       height: 3px;
     }
 
@@ -109,7 +111,7 @@ a {
   }
 }
 
-@media screen and (min-width: base.$media-breakpoint) {
+@media screen and (min-width: 480px) {
   .header {
     height: 60px;
   }

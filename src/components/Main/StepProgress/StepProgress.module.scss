@@ -1,4 +1,6 @@
 @use "src/base.scss";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .stepProgressContainer {
   display: flex;
@@ -13,30 +15,31 @@
   align-items: center;
   width: 2rem;
   height: 2rem;
-  border: 1px solid base.$progress-undone-color;
+  border: 1px solid var(--progress-undone-color);
   border-radius: 50%;
-  color: base.$progress-undone-color;
-  font-family: base.$main-font-number-family;
+  color: var(--progress-undone-color);
+  font-family: var(--main-font-number-family);
   font-weight: 700;
 
-  &[data-oneactive="true"] {
+  &[data-onactive="true"] {
     border: none;
-    color: base.$white;
-    background-color: base.$progress-current-color;
+    color: var(--progress-done-color);
+    background-color: var(--product-action-text);
   }
 
   &[data-active="true"] {
-    border: 1px solid base.$progress-current-color;
-    color: base.$progress-current-color;
+    border: none;
+    border: 1px solid var(--progress-current-color);
+    color: var(--progress-current-color);
   }
 }
 
 .stepConnecter {
   width: 60px;
   height: 1px;
-  border: 2px solid base.$undone-progress-border;
+  border: 2px solid var(--undone-progress-border);
 
   &[data-active="true"] {
-    border: 2px solid base.$progress-current-color;
+    border: 2px solid var(--progress-current-color);
   }
 }

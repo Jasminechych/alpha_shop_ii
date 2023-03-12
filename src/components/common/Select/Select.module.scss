@@ -1,4 +1,6 @@
 @use "src/base.scss";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .selectGroup {
   @extend %inputGroup_share;
@@ -23,5 +25,5 @@
 .select {
   @extend %input_share;
   appearance: none;
-  background: initial;
+  background: var(--background-color);
 }

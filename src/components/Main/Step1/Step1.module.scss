@@ -1,4 +1,6 @@
 @use "src/base.scss";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .formTitle {
   @extend %formTitle;
@@ -27,7 +29,7 @@
   grid-column: 1 / 7;
 }
 
-@media screen and (min-width: base.$media-breakpoint) {
+@media screen and (min-width: 480px) {
   .title,
   .location {
     grid-column: 1 / 3;

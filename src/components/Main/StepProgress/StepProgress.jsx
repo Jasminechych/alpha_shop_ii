@@ -31,7 +31,7 @@ function StepItem({ stepNumber, isStep1Active, isStepActive, isStepComplete }) {
     <div
       className={style.step}
       data-active={isStepActive}
-      data-oneactive={isStep1Active}
+      data-onactive={isStep1Active}
     >
       {isStepComplete ? <PgComplete /> : stepNumber}
     </div>

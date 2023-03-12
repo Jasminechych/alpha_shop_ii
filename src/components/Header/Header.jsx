@@ -19,7 +19,7 @@ function Header() {
   const { isDark, handleSwitchTheme } = useThemeData();
 
   return (
-    <header className={style.header}>
+    <header className={style.header} data-theme={isDark ? "dark" : ""}>
       <div className={style.headerContainer}>
         <a href="./" className={style.navbarLogo}>
           <Logo />

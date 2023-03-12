@@ -1,4 +1,6 @@
 @use "src/base.scss";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .mainContainer {
   display: flex;
@@ -7,10 +9,11 @@
 
 .mainTitle {
   margin-top: 1rem;
-  font-family: base.$main-font-family;
+  font-family: var(--main-font-family);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 38px;
+  color: var(--main-text);
 }
 
 .mainWrapper {

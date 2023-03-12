@@ -1,4 +1,5 @@
-@use "src/base";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .progressControlContainer {
   display: flex;
@@ -29,25 +30,25 @@
 .buttonPrev {
   @extend %button;
   justify-content: flex-start;
-  color: base.$left-arrow;
+  color: var(--left-arrow);
 }
 
 .buttonPrev svg {
-  fill: base.$left-arrow;
+  fill: var(--left-arrow);
 }
 
 .buttonNext {
   @extend %button;
   justify-content: center;
-  color: base.$white;
-  background-color: base.$pink;
+  color: var(--white);
+  background-color: var(--pink);
 }
 
 .none {
   display: none;
 }
 
-@media screen and (min-width: base.$media-breakpoint) {
+@media screen and (min-width: 480px) {
   .progressControlContainer {
     justify-content: flex-end;
   }

@@ -7,15 +7,17 @@ import Cart from "src/components/Main/Cart/Cart";
 import { useState } from "react";
 import { CartProvider } from "src/components/Main/Cart/CartContext";
 import { FormProvider } from "src/components/Main/FormContext";
+import { useThemeData } from "src/ThemeContext";
 
 
 import style from "src/components/Main/Main.module.scss";
 
 function Main() {
   const [step, setStep] = useState(1);
+  const { isDark } = useThemeData()
 
   return (
-    <main className={style.main}>
+    <main className={style.main} data-theme={isDark ? "dark" : ''}>
       <div className={style.mainContainer}>
         <h2 className={style.mainTitle}>結帳</h2>
         <div className={style.mainWrapper}>

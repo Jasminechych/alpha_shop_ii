@@ -7,7 +7,6 @@ function ThemeProvider ({children}) {
 
   // 經由 onClick 事件觸發切換 isDark 為 true or false
   function handleSwitchTheme() {
-    console.log("switch isDark");
     setIsDark(!isDark);
   }
 

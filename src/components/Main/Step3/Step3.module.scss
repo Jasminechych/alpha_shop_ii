@@ -25,7 +25,7 @@
   grid-column: 4 / 7;
 }
 
-@media screen and (min-width: base.$media-breakpoint) {
+@media screen and (min-width: 480px) {
   .cardName,
   .cardNumber {
     grid-column: 1 / 5;

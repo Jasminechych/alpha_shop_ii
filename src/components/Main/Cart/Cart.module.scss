@@ -1,18 +1,20 @@
-@use "src/base.scss";
+@import "src/theme-light.scss";
+@import "src/theme-dark.scss";
 
 .cartContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid base.$product-action-bg;
+  border: 1px solid var(--product-action-bg);
   border-radius: 8px;
   padding: 1rem;
+  color: var(--main-text);
 }
 
 .cartName {
   display: none;
   margin-bottom: 34px;
-  font-family: base.$main-font-family;
+  font-family: var(--main-font-family);
   font-weight: 700;
   font-size: 18px;
 }
@@ -53,7 +55,6 @@
   font-weight: 400;
   font-size: 1rem;
   line-height: 24px;
-  color: base.$grey-800;
 }
 
 .itemInfo {
@@ -77,11 +78,10 @@
 
 .itemAmount {
   margin-top: 18px;
-  font-family: base.$main-font-number-family;
+  font-family: var(--main-font-number-family);
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
-  color: base.$product-action-text;
 }
 
 .calculateWrapper {
@@ -95,17 +95,17 @@
   align-items: flex-end;
   height: 37px;
   margin-top: 1rem;
-  border-top: 1px solid base.$product-action-bg;
+  border-top: 1px solid var(--product-action-bg);
 }
 
 .calculateAmount {
-  font-family: base.$main-font-number-family;
+  font-family: var(--main-font-number-family);
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
 }
 
-@media screen and (min-width: base.$media-breakpoint) {
+@media screen and (min-width: 480px) {
   .cartName {
     display: block;
   }

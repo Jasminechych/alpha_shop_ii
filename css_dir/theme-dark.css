@@ -1,11 +1,4 @@
-body[data-theme=light] #theme-toggle > svg:nth-child(1) {
-  display: inline;
-}
-body[data-theme=light] #theme-toggle > svg:nth-child(2) {
-  display: none;
-}
-
-body[data-theme=dark] {
+[data-theme=dark] {
   --background-color: #121212;
   --footer-background-color: #333333;
   --nav-icon: rgba(255, 255, 255, 0.8);
@@ -28,42 +21,37 @@ body[data-theme=dark] {
   --product-action-text: #333333;
   --product-action-bg: #808080;
   --left-arrow: #FFFFFF;
+  background-color: var(--background-color);
 }
-body[data-theme=dark] #theme-toggle > svg:nth-child(1) {
-  display: none;
-}
-body[data-theme=dark] #theme-toggle > svg:nth-child(2) {
-  display: inline;
-}
-body[data-theme=dark] section.form-body .radio-group input[type=radio]::before {
+[data-theme=dark] section.form-body .radio-group input[type=radio]::before {
   border: none;
   border-radius: 50%;
   background-color: #333333;
 }
-body[data-theme=dark] section.form-body .radio-group input[type=radio]:checked::before {
+[data-theme=dark] section.form-body .radio-group input[type=radio]:checked::before {
   border: 6px solid #333333;
   background-color: #FFFFFF;
 }
-body[data-theme=dark] section.form-body .radio-group .radio-info .shipping-period {
+[data-theme=dark] section.form-body .radio-group .radio-info .shipping-period {
   color: rgba(255, 255, 255, 0.4);
 }
-body[data-theme=dark] section.form-body .radio-group input[type=radio] ~ .radio-box-border {
+[data-theme=dark] section.form-body .radio-group input[type=radio] ~ .radio-box-border {
   border-color: #5E5E5E;
 }
-body[data-theme=dark] section.form-body .radio-group input[type=radio]:checked ~ .radio-box-border {
+[data-theme=dark] section.form-body .radio-group input[type=radio]:checked ~ .radio-box-border {
   border-color: #FFFFFF;
 }
-body[data-theme=dark] section.cart-container {
+[data-theme=dark] section.cart-container {
   background-color: #383838;
   border-color: rgba(255, 255, 255, 0.2);
 }
-body[data-theme=dark] section.cart-info {
+[data-theme=dark] section.cart-info {
   border-top-color: rgba(255, 255, 255, 0.2);
 }
-body[data-theme=dark] section.cart-info .price {
+[data-theme=dark] section.cart-info .price {
   color: #FFFFFF;
 }
-body[data-theme=dark] section.progress-control-container section.button-group button.prev {
+[data-theme=dark] section.progress-control-container section.button-group button.prev {
   color: #FFFFFF;
 }
 
