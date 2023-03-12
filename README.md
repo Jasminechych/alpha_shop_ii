@@ -3,6 +3,9 @@
 ## 介紹
 簡易的購物車系統。
 
+![light-mode](src/assets//image/alpha_shop_light.png)
+![dark-mode](src/assets/image/alpha_shop_dark.png)
+
 ## 功能
 - 目前只有靜態畫面
 
